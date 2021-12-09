@@ -66,9 +66,9 @@ button.addEventListener('click', function() {
   const  roleMember = inputRole.value;
   const  imgMember = inputImg.value;
 
-  console.log(inputName.value);
-  console.log(inputRole.value);
-  console.log(inputImg.value);
+  // console.log(inputName.value);
+  // console.log(inputRole.value);
+  // console.log(inputImg.value);
 
   if (nameMember.length > 0 && roleMember.length > 0 && imgMember.length > 0) {
     const newCard = {
