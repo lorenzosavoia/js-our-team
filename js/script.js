@@ -66,7 +66,11 @@ button.addEventListener('click', function() {
   const  roleMember = inputRole.value;
   const  imgMember = inputImg.value;
 
-  if (nameMember.length > 0 && roleMember.length > 0 && imgMember.length < 0) {
+  console.log(inputName.value);
+  console.log(inputRole.value);
+  console.log(inputImg.value);
+
+  if (nameMember.length > 0 && roleMember.length > 0 && imgMember.length > 0) {
     const newCard = {
       name : nameMember,
       role : roleMember,
@@ -77,13 +81,13 @@ button.addEventListener('click', function() {
     <div class="team-card">
       <div class="card-image">
         <img
-          src="img/${element.image}"
-          alt="${element.name}"
+          src="img/${newCard.image}"
+          alt="${newCard.name}"
         />
       </div>
       <div class="card-text">
-        <h3>${element.name}</h3>
-        <p>${element.role}</p>
+        <h3>${newCard.name}</h3>
+        <p>${newCard.role}</p>
       </div>
     </div>`;
     container.innerHTML += cardTemplateDiv;  
