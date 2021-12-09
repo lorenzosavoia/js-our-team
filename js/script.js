@@ -32,8 +32,7 @@ const team = [
 ];
 
 const container = document.querySelector(".team-container");
-console.log(container);
-
+// console.log(container);
 for (let i = 0; i < team.length; i++) {
   const element = team[i];
   const cardTemplateDiv = `
@@ -49,23 +48,47 @@ for (let i = 0; i < team.length; i++) {
       <p>${element.role}</p>
     </div>
   </div>`;
-
-  // container.innerHTML += cardTemplateDiv;
   container.innerHTML += cardTemplateDiv;
-  
-  console.log(cardTemplateDiv);
-  console.log(element.image);
-  console.log(element.name);
-  console.log(element.role)
+  // console.log(cardTemplateDiv);
+  // console.log(element.image);
+  // console.log(element.name);
+  // console.log(element.role)
 }
 
-// const inputName = document.getElementById(name);
-// const inputRole = document.getElementById(role);
-// const button = document.getElementById(addMemberButton);
+const inputName = document.getElementById("name");
+const inputRole = document.getElementById("role");
+const inputImg = document.getElementById("image")
+const button = document.getElementById("addMemberButton");
 
-// button.addEventListener('click', function() {
-//   const  nameMember = inputName.value;
-//   const  roleMember = inputRole.value;
 
-  
-// });
+button.addEventListener('click', function() {
+  const  nameMember = inputName.value;
+  const  roleMember = inputRole.value;
+  const  imgMember = inputImg.value;
+
+  if (nameMember.length > 0 && roleMember.length > 0 && imgMember.length < 0) {
+    const newCard = {
+      name : nameMember,
+      role : roleMember,
+      image : imgMember,
+    };
+    team.push(newCard)
+    const cardTemplateDiv = `
+    <div class="team-card">
+      <div class="card-image">
+        <img
+          src="img/${element.image}"
+          alt="${element.name}"
+        />
+      </div>
+      <div class="card-text">
+        <h3>${element.name}</h3>
+        <p>${element.role}</p>
+      </div>
+    </div>`;
+    container.innerHTML += cardTemplateDiv;  
+  }else{
+    console.log("non hai inserito nulla");
+  }
+ 
+});
