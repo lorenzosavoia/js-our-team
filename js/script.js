@@ -37,22 +37,23 @@ console.log(container);
 for (let i = 0; i < team.length; i++) {
   const element = team[i];
   const cardTemplateDiv = `
-
   <div class="team-card">
-            <div class="card-image">
-              <img
-                src="img/${element.image}"
-                alt="${element.name}"
-              />
-            </div>
-            <div class="card-text">
-              <h3>${element.name}</h3>
-              <p>${element.role}</p>
-            </div>
+    <div class="card-image">
+      <img
+        src="img/${element.image}"
+        alt="${element.name}"
+      />
+    </div>
+    <div class="card-text">
+      <h3>${element.name}</h3>
+      <p>${element.role}</p>
+    </div>
   </div>`;
 
+  // container.innerHTML += cardTemplateDiv;
   container.innerHTML += cardTemplateDiv;
   
+  console.log(cardTemplateDiv);
   console.log(element.image);
   console.log(element.name);
   console.log(element.role)
