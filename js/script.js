@@ -31,7 +31,7 @@ const team = [
   },
 ];
 
-const container = document.querySelectorAll(".team-container");
+const container = document.querySelector(".team-container");
 console.log(container);
 
 for (let i = 0; i < team.length; i++) {
